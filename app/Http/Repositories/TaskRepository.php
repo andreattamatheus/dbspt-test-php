@@ -11,13 +11,13 @@ class TaskRepository
 {
     protected string $task = Task::class;
 
-    public function store($user, $name)
+    public function store($user, $name, $description = null)
     {
         DB::beginTransaction();
         $task = $this->task::create([
             'id' => Uuid::uuid4(),
             'name' => $name,
-            'description' => '',
+            'description' => $description,
             'status' => 'PENDING',
             'user_id' => $user['id'],
         ]);

@@ -33,7 +33,7 @@ class TaskController extends Controller
     public function store(TaskStoreRequest $request, TaskRepository $taskRepository): ?JsonResponse
     {
         try {
-            $taskRepository->store($request->user(), $request->name);
+            $taskRepository->store($request->user(), $request->name, $request->description);
             return response()->json([], ResponseAlias::HTTP_ACCEPTED);
         } catch (\Throwable $th) {
             \Log::alert($th);

@@ -7,7 +7,9 @@
           <h1 class="text-grey-darkest text-xl font-bold">Create your task</h1>
           <div class="flex mt-4">
             <input :class="errorMessage ? 'border-red-300' : ''" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
-              placeholder="Add Task" v-model="newTask.name" />
+              placeholder="Add task name" v-model="newTask.name" />
+            <input :class="errorMessage ? 'border-red-300' : ''" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+              placeholder="Add description" v-model="newTask.description" />
             <button @click="createTask"
                     :disabled="!newTask.name"
               class="flex-no-shrink px-4 border-2 rounded text-teal hover:text-gray-500 text-green border-green font-bold">
