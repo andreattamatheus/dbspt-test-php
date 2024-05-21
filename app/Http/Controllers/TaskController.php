@@ -95,7 +95,7 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return JsonResponse
      */
-    public function finishTask(TaskStoreRequest $request, TaskRepository $taskRepository): ?JsonResponse
+    public function finishTask(Request $request, TaskRepository $taskRepository): ?JsonResponse
     {
         try {
             $taskRepository->finishTask($request);
